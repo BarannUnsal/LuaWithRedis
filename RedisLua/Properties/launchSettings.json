@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "RedisLua": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

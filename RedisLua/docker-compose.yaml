@@ -1,0 +1,33 @@
+﻿version: "3"
+services:
+
+    redis_lua:
+        build:
+            context: ./
+            dockerfile: ./
+        restart: always
+        container_name: redis_lua
+        ports:
+          - 5000:5000
+        networks: 
+          - inner
+
+    redis:
+        image: redis:latest
+        restart: unless-stopped
+        container_name: redis
+        expose:
+          - "6379"
+        networks:
+          - inner
+        command: "redis server --appendonly yes"
+
+    mssql:
+       container_name: mssql
+       image: mcr.microsoft.com/mssql/server:2022-latest
+       restart: always
+       environment:
+         ACCEPT_EULA: "Y"
+         SA_PASSWORD: "p@$$12345"
+       ports:
+         - "1433:1433"

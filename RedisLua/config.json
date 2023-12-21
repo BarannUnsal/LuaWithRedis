@@ -1,0 +1,8 @@
+﻿{
+  "RedisConnection": {
+    "Default": "localhost:6379"
+  },
+  "ConnectionString": {
+    "Default": "User ID=postgres;Password=eminem3434;Host=localhost;Port=5432;Database=postgres;"
+  }
+}
